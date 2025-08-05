@@ -1,12 +1,10 @@
 import yfinance as yf # type: ignore
 import os
-import pandas as pd
 from typing import Dict, Any
 
 def get_stock_info(stock_code: str) -> Dict[str, Any]:
     """
     获取股票信息
-    
     Args:
         stock_code (str): 股票代码，例如：'AAPL' 或 '600519.SS'（上海）或 '0700.HK'（香港）
     
@@ -73,8 +71,6 @@ def get_stock_info(stock_code: str) -> Dict[str, Any]:
 
         # 定义一个执行的主方法
 def main():
-    
-
     stock_code = input("请输入股票代码如: ")
     try:
         info = get_stock_info(stock_code)
@@ -89,7 +85,7 @@ def main():
         print(str(e))
 
 if __name__ == "__main__":
-    proxy = 'http://127.0.0.1:7890'	# 代理设置，此处修改
-    os.environ['HTTP_PROXY'] = proxy 
-    os.environ['HTTPS_PROXY'] = proxy 
+    # proxy = 'http://127.0.0.1:7890'	# 代理设置，此处修改
+    # os.environ['HTTP_PROXY'] = proxy 
+    # os.environ['HTTPS_PROXY'] = proxy 
     main()
